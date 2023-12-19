@@ -10,8 +10,8 @@ import numpy as np
 from scipy.sparse import vstack, csc_matrix
 from sklearn.neighbors import KDTree
 
-def inject_noise_sparse(seed, n_out):     
-    rng = np.random.RandomState(42) 
+def inject_noise_sparse(seed, n_out):
+    rng = np.random.RandomState(42)
     n_sample, dim = seed.shape
     swap_ratio = 0.05
     n_swap_feat = int(swap_ratio * dim)
@@ -27,8 +27,8 @@ def inject_noise_sparse(seed, n_out):
         noise[i, swap_feats] = o2[0, swap_feats]
     return noise.tocsr()
 
-def inject_noise(seed, n_out):     
-    rng = np.random.RandomState(42) 
+def inject_noise(seed, n_out):
+    rng = np.random.RandomState(42)
     n_sample, dim = seed.shape
     swap_ratio = 0.05
     n_swap_feat = int(swap_ratio * dim)
